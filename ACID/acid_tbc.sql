@@ -8948,8 +8948,8 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Xai'ander
 ('1113701','11137','2','0','100','0','15','0','0','0','0','0','25','0','0','0','1','1150','0','0','0','0','0','0','Xai''ander - Flee at 15% HP'),
 -- Liladris Moonriver (11219) - NSR
--- Warsong Peon
-('1165601','11656','4','0','100','0','0','0','0','0','0','0','25','0','0','0','1','1150','0','0','0','0','0','0','Warsong Peon - Flee on Aggro'),
+-- Warsong Peon 11656
+('1165601','11656','4','0','100','0','0','0','0','0','0','0','65','0','0','0','1','1150','0','0','0','0','0','0','Warsong Peon - Retreat on Aggro'),
 -- Horde Scout 11680
 ('1168001','11680','4','0','100','0','0','0','0','0','0','0','57','2','25','0','0','0','0','0','0','0','0','0','Horde Scout - Enable Range Mode on Aggro'),
 ('1168002','11680','2','0','100','1024','15','0','0','0','0','0','25','0','0','0','1','1150','0','0','0','0','0','0','Horde Scout - Flee at 15% HP'),
@@ -16774,7 +16774,7 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2179601','21796','11','0','100','0','0','0','0','0','0','0','11','37510','0','0','0','0','0','0','0','0','0','0','Wyrm from Beyond - Cast Summon Singing Ridge Void Storm on Spawn'),
 ('2179602','21796','1','0','100','0','3000','3000','0','0','0','0','11','34876','0','0','19','33554432','0','0','19','256','0','0','Wyrm from Beyond - Cast Wyrm from Beyond Transform and Remove UntFlags on OOC timer'),
 ('2179603','21796','1','0','100','0','4000','4000','0','0','0','0','55','11','0','0','0','0','0','0','0','0','0','0','Wyrm from Beyond - Attack summoner on OOC timer'),
-('2179604','21796','0','0','100','1025','4000','6000','5500','7000','0','0','11','13321','1','0','0','0','0','0','0','0','0','0','Wyrm from Beyond - Cast Mana Burn'),
+('2179604','21796','0','0','100','1025','4000','13000','5500','17000','0','0','11','13321','16','0','0','0','0','0','0','0','0','0','Wyrm from Beyond - Cast Mana Burn on Random Target Mana User'),
 -- Wyrmcult Poacher 21809
 ('2180901','21809','11','0','100','0','0','0','0','0','0','0','11','37547','0','0','0','0','0','0','0','0','0','0','Wyrmcult Poacher - Cast Wyrmcult BroodlingCall on Spawn'),
 ('2180902','21809','4','0','100','0','0','0','0','0','0','0','57','2','25','0','0','0','0','0','0','0','0','0','Wyrmcult Poacher - Enable Range Mode on Aggro'),
@@ -17540,7 +17540,7 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('1692903','16929','0','0','100','1025','5000','15000','5000','9000','0','0','11','33911','1','0','0','0','0','0','0','0','0','0','Stonescythe Alpha - Cast Tear Armor'),
 -- Razorfang Hatchling 16932
 ('1693201','16932','0','0','100','1025','10000','20000','15000','30000','0','0','11','33781','1','0','0','0','0','0','0','0','0','0','Razorfang Hatchling - Cast Ravage'),
-('1693202','16932','2','0','100','0','20','0','0','0','0','0','25','0','0','0','54','16843','0','0','0','0','0','0','Razorfang Hatchling - Flee and Emote at 20% HP'),
+('1693202','16932','2','0','100','0','20','0','0','0','0','0','65','0','0','0','54','16843','0','0','0','0','0','0','Razorfang Hatchling - Retreat, Emote at 20% HP'),
 -- Razorfang Ravager 16933
 ('1693301','16933','0','0','100','1025','10000','20000','15000','30000','0','0','11','3242','1','0','0','0','0','0','0','0','0','0','Razorfang Ravager - Cast Ravage'),
 -- Quillfang Ravager 16934
@@ -17563,7 +17563,6 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('1693806','16938','0','5','100','1025','4000','12000','10000','20000','0','0','11','31553','1','0','0','0','0','0','0','0','0','0','Dreghood Brute - Cast Hamstring (Phase 1)'),
 -- Void Baron Galaxis 16939
 ('1693901','16939','11','0','100','0','0','0','0','0','0','0','11','34302','0','0','0','0','0','0','0','0','0','0','Void Baron Galaxis - Cast Coalesce on Spawn'),
-('1693902','16939','4','0','100','0','0','0','0','0','0','0','11','34236','0','0','0','0','0','0','0','0','0','0','Void Baron Galaxis - Cast Baron''s Summons on Aggro'),
 ('1693903','16939','2','0','100','1025','25','0','15000','15000','0','0','11','34239','15','0','0','0','0','0','0','0','0','0','Void Baron Galaxis - Cast Absorb Life at 25%'),
 -- Mo'arg Forgefiend 16946
 ('1694601','16946','11','0','100','0','0','0','0','0','0','0','3','0','0','0','0','0','0','0','0','0','0','0','Mo''arg Forgefiend - Demorph on Spawn'),
@@ -19983,9 +19982,10 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('1982304','19823','2','0','100','1024','25','0','0','0','0','0','11','37949','0','0','0','0','0','0','0','0','0','0','Crazed Colossus - Cast Summon Crazed Shardling at 25% HP'),
 -- Son of Corok 19824
 ('1982401','19824','0','0','100','1025','5000','15000','9500','18000','0','0','11','12612','17','0','0','0','0','0','0','0','0','0','Son of Corok - Cast Stomp'),
--- Dark Conclave Talonite
-('1982501','19825','9','0','100','1025','0','8','12000','17000','0','0','11','39229','1','0','0','0','0','0','0','0','0','0','Dark Conclave Talonite - Cast Talon of Justice'),
-('1982502','19825','9','0','100','1025','0','5','12000','18000','0','0','11','39230','1','0','0','0','0','0','0','0','0','0','Dark Conclave Harbringer - Cold Touch'),
+-- Dark Conclave Talonite 19825
+('1982501','19825','11','0','100','0','0','0','0','0','0','0','11','33900','0','34','0','0','0','0','0','0','0','0','Deathtalon Spirit - Cast Shroud of Death on Spawn'),
+('1982502','19825','0','0','100','1025','0','10000','12000','17000','0','0','11','39229','1','0','0','0','0','0','0','0','0','0','Dark Conclave Talonite - Cast Talon of Justice'),
+('1982503','19825','0','0','100','1025','0','10000','12000','18000','0','0','11','39230','1','0','0','0','0','0','0','0','0','0','Dark Conclave Harbringer - Cold Touch'),
 -- Dark Conclave Shadowmance 19826
 ('1982601','19826','4','0','100','0','0','0','0','0','0','0','57','2','35','0','0','0','0','0','0','0','0','0','Dark Conclave Shadowmance - Enable Range Mode on Aggro'),
 ('1982602','19826','2','0','100','1024','40','0','0','0','0','0','11','16588','0','0','0','0','0','0','0','0','0','0','Dark Conclave Shadowmance - Cast Dark Mending at 40% HP'),
@@ -24916,12 +24916,14 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 -- Lesser Shadow Fissure 17471 - npc_aoe_damage_trigger
 -- Training Dummy 17578
 ('1757801','17578','11','0','100','0','0','0','0','0','0','0','42','1','0','0','20','0','0','0','0','0','0','0','Training Dummy - Set Invincible, Disable Melee on Spawn'),
--- Heathen Guard - spell_list
+-- Heathen Guard 17621 - spell_list
 ('1762101','17621','2','0','100','1025','30','0','120000','120000','0','0','11','30485','0','0','1','1191','0','0','0','0','0','0','Heathen Guard - Cast Enrage at 30% HP'),
+('1762102','17621','11','0','100','0','0','0','0','0','0','0','11','41634','0','34','0','0','0','0','0','0','0','0','Heathen Guard - Cast Invisibility and Stealth Detection on Spawn'),
 -- Sharpshooter Guard 17622 - spell_list
-('1762201','17622','1','0','100','0','0','0','0','0','0','0','57','2','25','0','0','0','0','0','0','0','0','0','Sharpshooter Guard - Enable Range Mode on Spawn'),
--- Shattered Hand Reaver - spell_list
+('1762201','17622','1','0','100','0','0','0','0','0','0','0','57','2','25','0','11','41634','0','34','0','0','0','0','Sharpshooter Guard - Enable Range Mode, Cast Invisibility and Stealth Detection on Spawn'),
+-- Shattered Hand Reaver 17623 - spell_list
 ('1762301','17623','2','0','100','1025','30','0','120000','120000','0','0','11','30485','0','0','1','1191','0','0','0','0','0','0','Shattered Hand Reaver - Cast Enrage at 30% HP'),
+('1762302','17623','11','0','100','0','0','0','0','0','0','0','11','41634','0','34','0','0','0','0','0','0','0','0','Shattered Hand Reaver - Cast Invisibility and Stealth Detection on Spawn'),
 -- Rabid Warhound - spell_list
 -- Shattered Hand Houndmaster 17670
 ('1767001','17670','11','0','100','0','0','0','0','0','0','0','57','2','25','0','0','0','0','0','0','0','0','0','Shattered Hand Houndmaster - Enable Range Mode on Spawn'),
@@ -31724,6 +31726,7 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('1609301','16093','29','0','100','0','5000','5000','0','0','0','0','19','768','0','0','0','0','0','0','0','0','0','0','Spectral Stalker - Remove UnitFlags on Generic Timer'),
 -- Sandworm 17075 - npc_burster_worm
 -- Invisible Man 17286 - npc_invible_man
+-- Crashin' Thrashin' Robot 17299
 -- Totem of Wrath 17539 - TotemAI
 -- Tainted Earthgrab Totem 18176 - TotemAI
 -- Tainted Earthgrab Totem (1) 19897 - NSR
@@ -32220,6 +32223,9 @@ INSERT INTO `creature_ai_scripts` (`id`,`creature_id`,`event_type`,`event_invers
 ('2716601','27166','11','0','100','0','0','0','0','0','0','0','11','48032','0','2','11','48186','0','2','11','51847','0','2','The Brewmaiden - Cast Brewmaiden Spotlight and Cast Brewmaiden Despawn Control Aura and Cast The Brewmaiden''s Blessing (Rank 6) on Spawn'),
 ('2716602','27166','11','0','100','0','0','0','0','0','0','0','41','30000','0','0','21','0','0','0','1','26303','0','0','The Brewmaiden - Delayed Despawn and Disable Combat Movement and Say Text on Spawn'),
 -- The Black Brewmaiden 27169
+-- Bizzle Quicklift 27216
+-- Slurpo Fizzykeg 28329
+-- Great Brewfest Kodo 27707
 
 -- ==================
 -- Love is in the Air
